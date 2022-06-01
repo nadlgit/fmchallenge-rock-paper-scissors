@@ -1,1 +1,3 @@
-export const App = () => <p> Start from this template to develop a React app.</p>;
+import { ChallengeAttribution } from 'components/challenge-attribution';
+
+export const App = () => <ChallengeAttribution />;
