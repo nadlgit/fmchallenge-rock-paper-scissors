@@ -8,7 +8,7 @@
 }
 
 :root {
-  --min-margin-inline: 1.75em;
+  --app-width: clamp(10em, calc(100% - 2 * max(1.75em, 7.5vw)), max(32em, min(51vw, 44em)));
   font-family: 'Barlow Semi Condensed', sans-serif;
   font-weight: 600;
 }
