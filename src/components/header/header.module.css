@@ -1,0 +1,41 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--min-margin-inline);
+  width: calc(100% - 2 * var(--min-margin-inline));
+  max-width: 46.5em;
+  border: 3px solid hsl(217, 16%, 45%);
+  border-radius: clamp(5px, 1vw, 15px);
+}
+
+.logo {
+  margin: 1.5em clamp(1.2em, 2vw, 1.75em);
+  height: clamp(3em, calc(2em + 5vw), 7em);
+}
+
+.score {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: clamp(0.7em, 2vw, 1.2em) clamp(0.7em, 2vw, 1.75em);
+  height: clamp(4.5em, calc(3em + 5vw), 7.5em);
+  width: clamp(5em, calc(3.5em + 7vw), 9.75em);
+  background-color: white;
+  border-radius: 5px;
+  font-weight: 700;
+}
+.score > * {
+  line-height: 1em;
+}
+.score h3 {
+  color: hsl(229, 64%, 46%);
+  font-size: clamp(0.7em, calc(0.5em + 0.8vw), 1em);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+.score p {
+  color: hsl(229, 25%, 31%);
+  font-size: clamp(2.45em, calc(1.8em + 3vw), 4em);
+}
