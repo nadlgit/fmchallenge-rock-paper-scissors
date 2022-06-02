@@ -1,0 +1,21 @@
+@value bp-large-screen from 'styles/breakpoints.module.css';
+
+.footer button {
+  padding-block: 0.65em;
+  padding-inline: 2.4em;
+  border: 2px solid hsl(217, 16%, 45%);
+  border-radius: 10px;
+  background: transparent;
+  font: inherit;
+  color: white;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+@media bp-large-screen {
+  .footer {
+    align-self: flex-end;
+    margin-inline-end: 2.5em;
+  }
+}
