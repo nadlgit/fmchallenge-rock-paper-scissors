@@ -1,0 +1,46 @@
+@value boxShadowOffsetY:  clamp(5px, 0.5vw, 8px);
+
+.item {
+  display: inline-block;
+  padding: clamp(1em, 1.7vw, 1.5em);
+  border-radius: 50%;
+}
+
+.button {
+  border: none;
+}
+.button:not(:disabled) {
+  cursor: pointer;
+}
+
+.rock {
+  background: radial-gradient(circle at center center, hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+  box-shadow: 0 boxShadowOffsetY hsla(349, 70%, 56%, 0.7);
+}
+.paper {
+  background: radial-gradient(circle at center center, hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+  box-shadow: 0 boxShadowOffsetY hsla(230, 89%, 65%, 0.7);
+}
+.scissors {
+  background: radial-gradient(circle at center center, hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+  box-shadow: 0 boxShadowOffsetY hsla(40, 84%, 53%, 0.7);
+}
+
+.content {
+  display: grid;
+  place-content: center;
+  width: clamp(6.5em, 11.2vw, 9.6em);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+}
+.empty {
+  background-color: hsla(0, 0%, 0%, 0.15);
+}
+.imgwrapper {
+  background: white;
+  box-shadow: 0 boxShadowOffsetY hsla(0, 0%, 0%, 0.15) inset;
+}
+
+.img {
+  width: clamp(2.8em, 4.9vw, 4.2em);
+}

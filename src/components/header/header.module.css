@@ -21,8 +21,8 @@
   align-items: center;
   margin-block: clamp(0.6em, 1.2vw, 1em);
   margin-inline: clamp(0.6em, 1.7vw, 1.5em);
-  height: clamp(4.5em, 8.4vw, 7.2em);
-  width: clamp(5em, 11.1vw, 9.5em);
+  min-height: clamp(4.5em, 8.4vw, 7.2em);
+  min-width: clamp(5em, 11.1vw, 9.5em);
   background-color: white;
   border-radius: 5px;
 }
