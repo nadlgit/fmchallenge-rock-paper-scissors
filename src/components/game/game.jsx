@@ -1,17 +1,10 @@
 import styles from './game.module.css';
-import { ITEM_TYPES } from 'utils/constants';
-import { Item } from './item';
+import { Screen1 } from './screen1';
 
 export const Game = () => {
   return (
     <main className={styles.game}>
-      <Item type={ITEM_TYPES.PAPER} />
-      <Item type={ITEM_TYPES.SCISSORS} />
-      <Item type={ITEM_TYPES.ROCK} />
-      <Item />
-      <button>
-        <Item type={ITEM_TYPES.PAPER} />
-      </button>
+      <Screen1 />
     </main>
   );
 };

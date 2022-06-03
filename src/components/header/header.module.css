@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   margin-top: 1.75em;
-  width: var(--app-width);
+  width: clamp(10em, calc(100% - 2 * max(1.75em, 7.5vw)), max(32em, min(51vw, 44em)));
   border: 3px solid hsl(217, 16%, 45%);
   border-radius: clamp(5px, 1.1vw, 15px);
 }

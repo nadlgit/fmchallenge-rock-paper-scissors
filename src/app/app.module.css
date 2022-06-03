@@ -1,8 +1,7 @@
 .app {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-rows: auto 1fr auto auto;
+  place-items: center;
   min-height: 100vh;
   background: radial-gradient(ellipse at top center, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
   color: white;
