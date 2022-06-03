@@ -5,10 +5,7 @@
   padding-inline: 2.4em;
   border: 2px solid hsl(217, 16%, 45%);
   border-radius: 10px;
-  background: transparent;
-  font: inherit;
   color: white;
-  cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 0.2em;
 }

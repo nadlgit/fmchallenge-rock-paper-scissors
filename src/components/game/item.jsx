@@ -33,11 +33,7 @@ export const Item = ({ type = '', disabled = false, onClick = () => {} }) => {
   }
 
   return (
-    <button
-      className={`${styles.item} ${styles.button} ${specificClass}`}
-      disabled={disabled}
-      onClick={onClick}
-    >
+    <button className={`${styles.item} ${specificClass}`} disabled={disabled} onClick={onClick}>
       <div className={`${styles.content} ${styles.imgwrapper}`}>
         <img className={styles.img} src={imgSrc} alt={imgAlt} />
       </div>

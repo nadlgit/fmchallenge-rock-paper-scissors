@@ -5,14 +5,6 @@
   padding: clamp(1em, 1.7vw, 1.5em);
   border-radius: 50%;
 }
-
-.button {
-  border: none;
-}
-.button:not(:disabled) {
-  cursor: pointer;
-}
-
 .rock {
   background: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
   box-shadow: 0 boxShadowOffsetY hsl(347, 76%, 35%);
