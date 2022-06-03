@@ -14,16 +14,16 @@
 }
 
 .rock {
-  background: radial-gradient(circle at center center, hsl(349, 71%, 52%), hsl(349, 70%, 56%));
-  box-shadow: 0 boxShadowOffsetY hsla(349, 70%, 56%, 0.7);
+  background: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+  box-shadow: 0 boxShadowOffsetY hsl(347, 76%, 35%);
 }
 .paper {
-  background: radial-gradient(circle at center center, hsl(230, 89%, 62%), hsl(230, 89%, 65%));
-  box-shadow: 0 boxShadowOffsetY hsla(230, 89%, 65%, 0.7);
+  background: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+  box-shadow: 0 boxShadowOffsetY hsl(229, 65%, 46%);
 }
 .scissors {
-  background: radial-gradient(circle at center center, hsl(39, 89%, 49%), hsl(40, 84%, 53%));
-  box-shadow: 0 boxShadowOffsetY hsla(40, 84%, 53%, 0.7);
+  background: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+  box-shadow: 0 boxShadowOffsetY hsl(28, 75%, 45%);
 }
 
 .content {
