@@ -9,6 +9,9 @@ export const Game = () => {
       <Item type={ITEM_TYPES.SCISSORS} />
       <Item type={ITEM_TYPES.ROCK} />
       <Item />
+      <button>
+        <Item type={ITEM_TYPES.PAPER} />
+      </button>
     </main>
   );
 };

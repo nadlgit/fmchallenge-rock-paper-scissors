@@ -4,7 +4,7 @@ import IconRock from './icon-rock.svg';
 import IconPaper from './icon-paper.svg';
 import IconScissors from './icon-scissors.svg';
 
-export const Item = ({ type = '', disabled = false, onClick = () => {} }) => {
+export const Item = ({ type = '' }) => {
   let imgSrc;
   let imgAlt;
   let specificClass;
@@ -33,10 +33,10 @@ export const Item = ({ type = '', disabled = false, onClick = () => {} }) => {
   }
 
   return (
-    <button className={`${styles.item} ${specificClass}`} disabled={disabled} onClick={onClick}>
+    <div className={`${styles.item} ${specificClass}`}>
       <div className={`${styles.content} ${styles.imgwrapper}`}>
         <img className={styles.img} src={imgSrc} alt={imgAlt} />
       </div>
-    </button>
+    </div>
   );
 };
