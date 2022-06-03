@@ -1,3 +1,20 @@
+@value gridRowGap: clamp(1.5em,2.9vw,2.5em);
+
 .screen {
-  background: no-repeat center url(./bg-triangle.svg);
+  display: grid;
+  grid-template-areas:
+    'paper scissors'
+    'rock rock';
+  column-gap: calc(2 * gridRowGap);
+  row-gap: gridRowGap;
+  background: url(./bg-triangle.svg) center/60% no-repeat;
+}
+.paper {
+  grid-area: paper;
+}
+.scissors {
+  grid-area: scissors;
+}
+.rock {
+  grid-area: rock;
 }
