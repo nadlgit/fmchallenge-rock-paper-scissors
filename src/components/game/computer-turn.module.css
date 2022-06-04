@@ -1,0 +1,40 @@
+@value bp-large-screen from 'styles/breakpoints.module.css';
+
+.container {
+  display: grid;
+  grid-template-areas:
+    'item1 item2'
+    'text1 text2'
+    'result result';
+  place-items: center;
+  gap: 3em;
+}
+.text1,
+.text2 {
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+.text1 {
+  grid-area: text1;
+}
+.text2 {
+  grid-area: text2;
+}
+.item1 {
+  grid-area: item1;
+}
+.item2 {
+  grid-area: item2;
+}
+.result {
+  grid-area: result;
+}
+
+@media bp-large-screen {
+  .container {
+    grid-template-areas:
+      'text1 result text2'
+      'item1 result item2';
+  }
+}
