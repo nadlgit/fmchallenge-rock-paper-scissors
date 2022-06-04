@@ -43,7 +43,8 @@ export const Playground = ({ incrementScore = () => {}, decrementScore = () => {
         }
       }, delay);
     }
-  }, [playerChoice, computerChoice, incrementScore, decrementScore]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [playerChoice, computerChoice]);
 
   return (
     <main className={styles.game}>
