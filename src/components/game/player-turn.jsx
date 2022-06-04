@@ -1,8 +1,8 @@
-import styles from './player-choice.module.css';
+import styles from './player-turn.module.css';
 import { CHOICES } from 'utils/constants';
 import { Item } from './item';
 
-export const PlayerChoice = ({ onChoice = () => {} }) => {
+export const PlayerTurn = ({ onChoice = () => {} }) => {
   return (
     <div className={styles.container}>
       <button className={styles.paper} onClick={() => onChoice(CHOICES.PAPER)}>

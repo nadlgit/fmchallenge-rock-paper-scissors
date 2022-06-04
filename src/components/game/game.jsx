@@ -1,10 +1,10 @@
 import styles from './game.module.css';
-import { PlayerChoice } from './player-choice';
+import { PlayerTurn } from './player-turn';
 
 export const Game = () => {
   return (
     <main className={styles.game}>
-      <PlayerChoice />
+      <PlayerTurn />
     </main>
   );
 };
