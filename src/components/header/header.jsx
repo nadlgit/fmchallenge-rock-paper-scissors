@@ -1,5 +1,5 @@
 import styles from './header.module.css';
-import Logo from './logo.svg';
+import Logo from 'assets/images/logo.svg';
 
 export const Header = ({ score = 0 }) => (
   <header className={styles.header}>

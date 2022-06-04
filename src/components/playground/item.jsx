@@ -1,8 +1,8 @@
 import styles from './item.module.css';
 import { CHOICES } from 'utils/constants';
-import IconRock from './icon-rock.svg';
-import IconPaper from './icon-paper.svg';
-import IconScissors from './icon-scissors.svg';
+import IconRock from 'assets/images/icon-rock.svg';
+import IconPaper from 'assets/images/icon-paper.svg';
+import IconScissors from 'assets/images/icon-scissors.svg';
 
 export const Item = ({ type = '' }) => {
   let imgSrc;

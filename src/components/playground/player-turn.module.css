@@ -7,7 +7,7 @@
     'rock rock';
   column-gap: calc(2 * gridRowGap);
   row-gap: gridRowGap;
-  background: url(./bg-triangle.svg) center/60% no-repeat;
+  background: url(assets/images/bg-triangle.svg) center/60% no-repeat;
 }
 .paper {
   grid-area: paper;
