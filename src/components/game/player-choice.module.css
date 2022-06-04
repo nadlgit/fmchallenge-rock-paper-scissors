@@ -1,6 +1,6 @@
 @value gridRowGap: clamp(1.5em,2.9vw,2.5em);
 
-.screen {
+.container {
   display: grid;
   grid-template-areas:
     'paper scissors'

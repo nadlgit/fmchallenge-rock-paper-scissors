@@ -4,7 +4,7 @@ import { Item } from './item';
 
 export const PlayerChoice = ({ onChoice = () => {} }) => {
   return (
-    <div className={styles.screen}>
+    <div className={styles.container}>
       <button className={styles.paper} onClick={() => onChoice(CHOICES.PAPER)}>
         <Item type={CHOICES.PAPER} />
       </button>
