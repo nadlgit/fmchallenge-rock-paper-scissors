@@ -1,5 +1,5 @@
 import styles from './item.module.css';
-import { ITEM_TYPES } from 'utils/constants';
+import { CHOICES } from 'utils/constants';
 import IconRock from './icon-rock.svg';
 import IconPaper from './icon-paper.svg';
 import IconScissors from './icon-scissors.svg';
@@ -9,17 +9,17 @@ export const Item = ({ type = '' }) => {
   let imgAlt;
   let specificClass;
   switch (type) {
-    case ITEM_TYPES.ROCK:
+    case CHOICES.ROCK:
       imgSrc = IconRock;
       imgAlt = 'rock icon';
       specificClass = styles.rock;
       break;
-    case ITEM_TYPES.PAPER:
+    case CHOICES.PAPER:
       imgSrc = IconPaper;
       imgAlt = 'paper icon';
       specificClass = styles.paper;
       break;
-    case ITEM_TYPES.SCISSORS:
+    case CHOICES.SCISSORS:
       imgSrc = IconScissors;
       imgAlt = 'scissors icon';
       specificClass = styles.scissors;
