@@ -21,14 +21,13 @@
     'image'
     'close';
   place-items: center;
-  gap: 2em;
   background-color: white;
   color: hsl(229, 25%, 31%);
 }
 .modal h2 {
   grid-area: title;
   font-weight: 700;
-  font-size: 1.5em;
+  font-size: 2em;
 }
 .modal img {
   grid-area: image;
@@ -44,14 +43,18 @@
     transform: translate(-50%, -50%);
     height: auto;
     width: auto;
-    padding: 2em;
     grid-template-areas:
-      'title close'
-      'image image';
+      'title title close close'
+      'image image image image';
+    gap: 3em;
+    padding: 2em;
     border-radius: 10px;
   }
   .modal h2 {
     justify-self: left;
+  }
+  .modal img {
+    padding-inline: 1em;
   }
   .modal button {
     justify-self: right;
