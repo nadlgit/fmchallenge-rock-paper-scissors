@@ -47,7 +47,7 @@ export const Playground = ({ incrementScore = () => {}, decrementScore = () => {
   }, [playerChoice, computerChoice]);
 
   return (
-    <main className={styles.game}>
+    <main className={styles.playground}>
       {playerChoice ? (
         <ComputerTurn
           playerChoice={playerChoice}
