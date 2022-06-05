@@ -1,8 +1,10 @@
 {
   "name": "fmchallenge-rock-paper-scissors",
+  "homepage": "https://nadlgit.github.io/fmchallenge-rock-paper-scissors",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "gh-pages": "^4.0.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-scripts": "5.0.1",
@@ -12,7 +14,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
