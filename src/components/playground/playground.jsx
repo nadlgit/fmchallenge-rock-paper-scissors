@@ -14,35 +14,30 @@ export const Playground = ({ incrementScore = () => {}, decrementScore = () => {
     setComputerChoice('');
     setResult('');
   };
-  const tmpDelay = 500;
 
   useEffect(() => {
     if (playerChoice) {
-      setTimeout(() => {
-        setComputerChoice(generateComputerChoice());
-      }, tmpDelay);
+      setComputerChoice(generateComputerChoice());
     }
   }, [playerChoice]);
 
   useEffect(() => {
     if (playerChoice && computerChoice) {
-      setTimeout(() => {
-        const res = processWinner(playerChoice, computerChoice);
-        switch (res) {
-          case WINNER.PLAYER:
-            setResult('You win');
-            incrementScore();
-            break;
-          case WINNER.COMPUTER:
-            setResult('You lose');
-            decrementScore();
-            break;
-          case WINNER.TIE:
-            setResult('Tie');
-            break;
-          default:
-        }
-      }, tmpDelay);
+      const res = processWinner(playerChoice, computerChoice);
+      switch (res) {
+        case WINNER.PLAYER:
+          setResult('You win');
+          incrementScore();
+          break;
+        case WINNER.COMPUTER:
+          setResult('You lose');
+          decrementScore();
+          break;
+        case WINNER.TIE:
+          setResult('Tie');
+          break;
+        default:
+      }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [playerChoice, computerChoice]);
