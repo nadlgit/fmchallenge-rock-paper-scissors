@@ -29,6 +29,10 @@
 .result {
   grid-area: result;
 }
+.result button {
+  background-color: white;
+  color: hsl(229, 25%, 31%);
+}
 
 @media bp-large-screen {
   .container {
