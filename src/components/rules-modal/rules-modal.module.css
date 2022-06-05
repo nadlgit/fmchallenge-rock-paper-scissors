@@ -1,0 +1,60 @@
+@value bp-large-screen from 'styles/breakpoints.module.css';
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: hsla(0, 100%, 0%, 0.6);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-areas:
+    'title'
+    'image'
+    'close';
+  place-items: center;
+  gap: 2em;
+  background-color: white;
+  color: hsl(229, 25%, 31%);
+}
+.modal h2 {
+  grid-area: title;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.5em;
+}
+.modal img {
+  grid-area: image;
+}
+.modal button {
+  grid-area: close;
+}
+
+@media bp-large-screen {
+  .modal {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: auto;
+    width: auto;
+    padding: 2em;
+    grid-template-areas:
+      'title close'
+      'image image';
+    border-radius: 10px;
+  }
+  .modal h2 {
+    justify-self: left;
+  }
+  .modal button {
+    justify-self: right;
+  }
+}
