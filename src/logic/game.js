@@ -1,4 +1,4 @@
-import { CHOICES } from 'utils/constants';
+import { CHOICES, WINNER } from 'utils/constants';
 
 export const generateComputerChoice = () => {
   const choicesList = Object.values(CHOICES);
@@ -11,14 +11,14 @@ export const processWinner = (playerChoice = '', computerChoice = '') => {
     throw new Error('Unexpected value for playerChoice or computerChoice');
   }
   if (playerChoice === computerChoice) {
-    return 'TIE';
+    return WINNER.TIE;
   } else if (
     (playerChoice === CHOICES.ROCK && computerChoice === CHOICES.SCISSORS) ||
     (playerChoice === CHOICES.SCISSORS && computerChoice === CHOICES.PAPER) ||
     (playerChoice === CHOICES.PAPER && computerChoice === CHOICES.ROCK)
   ) {
-    return 'PLAYER';
+    return WINNER.PLAYER;
   } else {
-    return 'COMPUTER';
+    return WINNER.COMPUTER;
   }
 };

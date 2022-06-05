@@ -3,3 +3,9 @@ export const CHOICES = Object.freeze({
   PAPER: 'PAPER',
   SCISSORS: 'SCISSORS',
 });
+
+export const WINNER = Object.freeze({
+  PLAYER: 'PLAYER',
+  COMPUTER: 'COMPUTER',
+  TIE: 'TIE',
+});

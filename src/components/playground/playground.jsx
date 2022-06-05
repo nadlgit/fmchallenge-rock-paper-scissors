@@ -2,6 +2,7 @@ import styles from './playground.module.css';
 import { PlayerTurn } from './player-turn';
 import { ComputerTurn } from './computer-turn';
 import { generateComputerChoice, processWinner } from 'logic/game';
+import { WINNER } from 'utils/constants';
 import { useEffect, useState } from 'react';
 
 export const Playground = ({ incrementScore = () => {}, decrementScore = () => {} }) => {
@@ -13,13 +14,13 @@ export const Playground = ({ incrementScore = () => {}, decrementScore = () => {
     setComputerChoice('');
     setResult('');
   };
-  const delay = 1000;
+  const tmpDelay = 500;
 
   useEffect(() => {
     if (playerChoice) {
       setTimeout(() => {
         setComputerChoice(generateComputerChoice());
-      }, delay);
+      }, tmpDelay);
     }
   }, [playerChoice]);
 
@@ -28,20 +29,20 @@ export const Playground = ({ incrementScore = () => {}, decrementScore = () => {
       setTimeout(() => {
         const res = processWinner(playerChoice, computerChoice);
         switch (res) {
-          case 'PLAYER':
+          case WINNER.PLAYER:
             setResult('You win');
             incrementScore();
             break;
-          case 'COMPUTER':
+          case WINNER.COMPUTER:
             setResult('You lose');
             decrementScore();
             break;
-          case 'TIE':
+          case WINNER.TIE:
             setResult('Tie');
             break;
           default:
         }
-      }, delay);
+      }, tmpDelay);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [playerChoice, computerChoice]);
