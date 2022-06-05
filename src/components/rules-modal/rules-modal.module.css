@@ -27,7 +27,6 @@
 }
 .modal h2 {
   grid-area: title;
-  text-transform: uppercase;
   font-weight: 700;
   font-size: 1.5em;
 }

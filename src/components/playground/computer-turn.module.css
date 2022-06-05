@@ -12,7 +12,6 @@
 .text1,
 .text2 {
   font-size: 1em;
-  text-transform: uppercase;
   letter-spacing: 0.15em;
 }
 .text1 {

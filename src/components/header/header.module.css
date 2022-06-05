@@ -33,7 +33,6 @@
 .score h3 {
   color: hsl(229, 64%, 46%);
   font-size: clamp(0.7em, 1.2vw, 1em);
-  text-transform: uppercase;
   letter-spacing: 0.15em;
 }
 .score p {
