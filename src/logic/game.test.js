@@ -16,7 +16,7 @@ describe('processWinner', () => {
 
   test('when rock vs rock', () => {
     const result = processWinner(CHOICES.ROCK, CHOICES.ROCK);
-    expect(result).toBe(WINNER.TIE);
+    expect(result).toBe(WINNER.DRAW);
   });
 
   test('when rock vs paper', () => {
@@ -36,7 +36,7 @@ describe('processWinner', () => {
 
   test('when paper vs paper', () => {
     const result = processWinner(CHOICES.PAPER, CHOICES.PAPER);
-    expect(result).toBe(WINNER.TIE);
+    expect(result).toBe(WINNER.DRAW);
   });
 
   test('when paper vs scissors', () => {
@@ -56,6 +56,6 @@ describe('processWinner', () => {
 
   test('when scissors vs scissors', () => {
     const result = processWinner(CHOICES.SCISSORS, CHOICES.SCISSORS);
-    expect(result).toBe(WINNER.TIE);
+    expect(result).toBe(WINNER.DRAW);
   });
 });

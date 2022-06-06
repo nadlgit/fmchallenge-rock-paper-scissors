@@ -88,13 +88,13 @@ describe('Playground component', () => {
     expect(testProps.decrementScore).toHaveBeenCalled();
   });
 
-  test('tie (no winner)', async () => {
+  test('draw (no winner)', async () => {
     generateComputerChoice.mockImplementation(() => CHOICES.ROCK);
-    processWinner.mockImplementation(() => WINNER.TIE);
+    processWinner.mockImplementation(() => WINNER.DRAW);
     render(<Playground {...testProps} />);
 
     userEvent.click(screen.getByRole('button', { name: testChoices[0].str }));
-    await screen.findByText(/tie/i);
+    await screen.findByText(/draw/i);
     expect(testProps.incrementScore).not.toHaveBeenCalled();
     expect(testProps.decrementScore).not.toHaveBeenCalled();
   });

@@ -33,8 +33,8 @@ export const Playground = ({ incrementScore = () => {}, decrementScore = () => {
           setResult('You lose');
           decrementScore();
           break;
-        case WINNER.TIE:
-          setResult('Tie');
+        case WINNER.DRAW:
+          setResult('Draw');
           break;
         default:
       }

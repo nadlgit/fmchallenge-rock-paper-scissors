@@ -7,5 +7,5 @@ export const CHOICES = Object.freeze({
 export const WINNER = Object.freeze({
   PLAYER: 'PLAYER',
   COMPUTER: 'COMPUTER',
-  TIE: 'TIE',
+  DRAW: 'DRAW',
 });
