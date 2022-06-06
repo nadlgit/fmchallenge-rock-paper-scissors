@@ -49,6 +49,9 @@
   padding-inline: 3.3em;
   letter-spacing: 0.1em;
 }
+.result button:hover {
+  color: hsl(347, 76%, 35%);
+}
 
 @media bp-large-screen {
   .container {
