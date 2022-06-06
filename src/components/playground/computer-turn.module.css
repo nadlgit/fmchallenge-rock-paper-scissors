@@ -7,11 +7,11 @@
     'text1 text2'
     'result result';
   place-items: center;
-  gap: 3em;
+  /* gap: 3em; */
 }
 .text1,
 .text2 {
-  font-size: 1em;
+  font-size: 0.8em;
   letter-spacing: 0.15em;
 }
 .text1 {
@@ -23,15 +23,31 @@
 .item1 {
   grid-area: item1;
 }
+.highlight {
+  border-radius: 50%;
+  box-shadow: 0 0 0 20px hsla(0, 0%, 100%, 0.04), 0 0 0 40px hsla(0, 0%, 100%, 0.03),
+    0 0 0 60px hsla(0, 0%, 100%, 0.02);
+}
 .item2 {
   grid-area: item2;
 }
 .result {
   grid-area: result;
+  display: grid;
+  place-items: center;
+  gap: 1em;
+}
+.result p {
+  font-size: 3.2em;
+  font-weight: 700;
 }
 .result button {
   background-color: white;
   color: hsl(229, 25%, 31%);
+  border-radius: 8px;
+  padding-block: 0.8em;
+  padding-inline: 3.3em;
+  letter-spacing: 0.1em;
 }
 
 @media bp-large-screen {

@@ -1,6 +1,6 @@
 @value bp-large-screen from 'styles/breakpoints.module.css';
 
-.playground {
+/* .playground {
   margin-block: 1em;
   align-self: flex-start;
 }
@@ -9,4 +9,4 @@
   .playground {
     align-self: center;
   }
-}
+} */
