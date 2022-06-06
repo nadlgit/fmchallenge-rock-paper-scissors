@@ -19,7 +19,11 @@ button {
   font: inherit;
   color: inherit;
   text-transform: inherit;
+  transition: transform ease-out 0.1s;
 }
 button:not(:disabled) {
   cursor: pointer;
+}
+button:hover {
+  transform: scale(1.1);
 }

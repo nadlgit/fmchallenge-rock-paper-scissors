@@ -11,6 +11,9 @@
   border-radius: 10px;
   letter-spacing: 0.2em;
 }
+.footer button:hover {
+  box-shadow: 0 0 5px 1px gray;
+}
 
 @media bp-large-screen {
   .footer {

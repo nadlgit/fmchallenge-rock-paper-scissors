@@ -51,6 +51,7 @@
 }
 .result button:hover {
   color: hsl(347, 76%, 35%);
+  box-shadow: 0 0 5px 1px whitesmoke;
 }
 
 @media bp-large-screen {
