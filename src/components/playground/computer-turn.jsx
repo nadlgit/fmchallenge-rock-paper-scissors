@@ -1,14 +1,7 @@
 import styles from './computer-turn.module.css';
 import { Item } from './item';
 import { WINNER } from 'utils/constants';
-
-// const tmpSleep = (ms) => {
-//   const date = Date.now();
-//   let currentDate = null;
-//   do {
-//     currentDate = Date.now();
-//   } while (currentDate - date < ms);
-// };
+import { useEffect, useState } from 'react';
 
 export const ComputerTurn = ({
   playerChoice = '',
@@ -16,8 +9,8 @@ export const ComputerTurn = ({
   result = '',
   onRestart = () => {},
 }) => {
-  // if (computerChoice) tmpSleep(500);
-  // if (result) tmpSleep(500);
+  const [showComputerChoice, setShowComputerChoice] = useState(false);
+  const [showResult, setShowResult] = useState(false);
 
   const message =
     result === WINNER.PLAYER
@@ -28,18 +21,43 @@ export const ComputerTurn = ({
       ? 'Draw'
       : '';
 
+  const delayMs = 300;
+
+  useEffect(() => {
+    computerChoice &&
+      setTimeout(() => {
+        setShowComputerChoice(true);
+      }, delayMs);
+  }, [computerChoice]);
+
+  useEffect(() => {
+    result &&
+      showComputerChoice &&
+      setTimeout(() => {
+        setShowResult(true);
+      }, delayMs);
+  }, [result, showComputerChoice]);
+
   return (
     <div className={styles.container}>
       <p className={styles.text1}>You picked</p>
-      <div className={`${styles.item1} ${result === WINNER.PLAYER && styles.highlight}`}>
+      <div
+        className={`${styles.item1} ${
+          showResult && result === WINNER.PLAYER ? styles.highlight : ''
+        }`}
+      >
         <Item type={playerChoice} />
       </div>
       <p className={styles.text2}>The House picked</p>
-      <div className={`${styles.item2} ${result === WINNER.COMPUTER && styles.highlight}`}>
-        <Item type={computerChoice} />
+      <div
+        className={`${styles.item2} ${
+          showResult && result === WINNER.COMPUTER ? styles.highlight : ''
+        }`}
+      >
+        <Item type={showComputerChoice && computerChoice} />
       </div>
       <div className={styles.result}>
-        {result && (
+        {showResult && (
           <>
             <p>{message}</p>
             <button onClick={onRestart}>Play again</button>

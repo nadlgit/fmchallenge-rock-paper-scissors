@@ -52,7 +52,9 @@ describe('Playground component', () => {
     render(<Playground {...testProps} />);
 
     userEvent.click(screen.getByRole('button', { name: str }));
-    await waitFor(() => expect(generateComputerChoice).toHaveBeenCalled());
+    await waitFor(() =>
+      expect(screen.queryByRole('button', { name: str })).not.toBeInTheDocument()
+    );
     expect(screen.getByRole('img', { name: str })).toBeInTheDocument();
   });
 
@@ -63,7 +65,9 @@ describe('Playground component', () => {
 
     userEvent.click(screen.getByRole('button', { name: playerChoiceStr }));
     await waitFor(() => expect(generateComputerChoice).toHaveBeenCalled());
-    expect(screen.getAllByRole('img', { name: str }).length).toBe(str === playerChoiceStr ? 2 : 1);
+    await waitFor(() =>
+      expect(screen.getAllByRole('img', { name: str }).length).toBe(str === playerChoiceStr ? 2 : 1)
+    );
   });
 
   test('player wins', async () => {
