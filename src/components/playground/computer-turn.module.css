@@ -36,7 +36,8 @@
 .result {
   grid-area: result;
   display: grid;
-  place-items: center;
+  place-content: center;
+  justify-items: center;
   gap: 1em;
   margin-top: 8vh;
 }
@@ -59,7 +60,23 @@
 @media bp-large-screen {
   .container {
     grid-template-areas:
-      'text1 result text2'
+      'text1 . text2'
       'item1 result item2';
+    column-gap: 4.5em;
+    row-gap: 5em;
+  }
+  .text1,
+  .text2 {
+    font-size: 1.5em;
+  }
+  .item1,
+  .item2 {
+    transform: scale(1.4);
+  }
+  .result {
+    margin-top: 0;
+  }
+  .result button {
+    margin-inline: 2.5em;
   }
 }
