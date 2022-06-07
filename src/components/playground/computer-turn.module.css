@@ -1,17 +1,18 @@
 @value bp-large-screen from 'styles/breakpoints.module.css';
+@value firstShadowRadius: clamp(1em, 1.7vw, 1.5em);
+@value gridRowGap: clamp(1.5em,2.9vw,2.5em);
 
 .container {
+  min-height: 50vh;
   display: grid;
   grid-template-areas:
     'item1 item2'
     'text1 text2'
     'result result';
-  place-items: center;
-  /* gap: 3em; */
-}
-.text1,
-.text2 {
-  font-size: 0.8em;
+  justify-items: center;
+  align-content: start;
+  column-gap: calc(2 * gridRowGap);
+  row-gap: gridRowGap;
   letter-spacing: 0.15em;
 }
 .text1 {
@@ -25,8 +26,9 @@
 }
 .highlight {
   border-radius: 50%;
-  box-shadow: 0 0 0 20px hsla(0, 0%, 100%, 0.04), 0 0 0 40px hsla(0, 0%, 100%, 0.03),
-    0 0 0 60px hsla(0, 0%, 100%, 0.02);
+  box-shadow: 0 0 0 firstShadowRadius hsla(0, 0%, 100%, 0.04),
+    0 0 0 calc(2.5 * firstShadowRadius) hsla(0, 0%, 100%, 0.038),
+    0 0 0 calc(4.5 * firstShadowRadius) hsla(0, 0%, 100%, 0.03);
 }
 .item2 {
   grid-area: item2;
@@ -36,18 +38,18 @@
   display: grid;
   place-items: center;
   gap: 1em;
+  margin-top: 8vh;
 }
 .result p {
-  font-size: 3.2em;
+  font-size: 3.4em;
   font-weight: 700;
 }
 .result button {
   background-color: white;
   color: hsl(229, 25%, 31%);
   border-radius: 8px;
-  padding-block: 0.8em;
-  padding-inline: 3.3em;
-  letter-spacing: 0.1em;
+  padding-block: 0.9em;
+  padding-inline: 3.4em;
 }
 .result button:hover {
   color: hsl(347, 76%, 35%);

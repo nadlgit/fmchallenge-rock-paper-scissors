@@ -1,4 +1,4 @@
-@value boxShadowOffsetY:  clamp(5px, 0.5vw, 8px);
+@value boxShadowOffsetY: clamp(5px, 0.5vw, 8px);
 
 .item {
   display: inline-block;
