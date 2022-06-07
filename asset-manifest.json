@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/fmchallenge-rock-paper-scissors/static/css/main.d9764755.css",
-    "main.js": "/fmchallenge-rock-paper-scissors/static/js/main.b8f7b9a6.js",
+    "main.css": "/fmchallenge-rock-paper-scissors/static/css/main.1ae6800d.css",
+    "main.js": "/fmchallenge-rock-paper-scissors/static/js/main.b97d7f7f.js",
     "static/media/logo.svg": "/fmchallenge-rock-paper-scissors/static/media/logo.a4a2b39fefcdb6a1a8088c4dba8f3d93.svg",
     "static/media/image-rules.svg": "/fmchallenge-rock-paper-scissors/static/media/image-rules.258b753fb6284dc8ae00c5b2fa7938c0.svg",
     "static/media/icon-paper.svg": "/fmchallenge-rock-paper-scissors/static/media/icon-paper.8b57a6b108c1b8ae82931a39b10f96a2.svg",
@@ -10,11 +10,11 @@
     "static/media/icon-rock.svg": "/fmchallenge-rock-paper-scissors/static/media/icon-rock.476e90a9646a87bb3645d2f09f4f7fba.svg",
     "static/media/icon-close.svg": "/fmchallenge-rock-paper-scissors/static/media/icon-close.bde602ecd1a4e55e0c27137ed651e027.svg",
     "static/media/bg-triangle.svg": "/fmchallenge-rock-paper-scissors/static/media/bg-triangle.c0c30b562fdb08766659.svg",
-    "main.d9764755.css.map": "/fmchallenge-rock-paper-scissors/static/css/main.d9764755.css.map",
-    "main.b8f7b9a6.js.map": "/fmchallenge-rock-paper-scissors/static/js/main.b8f7b9a6.js.map"
+    "main.1ae6800d.css.map": "/fmchallenge-rock-paper-scissors/static/css/main.1ae6800d.css.map",
+    "main.b97d7f7f.js.map": "/fmchallenge-rock-paper-scissors/static/js/main.b97d7f7f.js.map"
   },
   "entrypoints": [
-    "static/css/main.d9764755.css",
-    "static/js/main.b8f7b9a6.js"
+    "static/css/main.1ae6800d.css",
+    "static/js/main.b97d7f7f.js"
   ]
 }
