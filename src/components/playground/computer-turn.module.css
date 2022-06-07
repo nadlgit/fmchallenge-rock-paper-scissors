@@ -24,14 +24,14 @@
 .item1 {
   grid-area: item1;
 }
+.item2 {
+  grid-area: item2;
+}
 .highlight {
   border-radius: 50%;
   box-shadow: 0 0 0 firstShadowRadius hsla(0, 0%, 100%, 0.04),
     0 0 0 calc(2.5 * firstShadowRadius) hsla(0, 0%, 100%, 0.038),
     0 0 0 calc(4.5 * firstShadowRadius) hsla(0, 0%, 100%, 0.03);
-}
-.item2 {
-  grid-area: item2;
 }
 .result {
   grid-area: result;

@@ -24,20 +24,9 @@ export const Playground = ({ incrementScore = () => {}, decrementScore = () => {
   useEffect(() => {
     if (playerChoice && computerChoice) {
       const res = processWinner(playerChoice, computerChoice);
-      switch (res) {
-        case WINNER.PLAYER:
-          setResult('You win');
-          incrementScore();
-          break;
-        case WINNER.COMPUTER:
-          setResult('You lose');
-          decrementScore();
-          break;
-        case WINNER.DRAW:
-          setResult('Draw');
-          break;
-        default:
-      }
+      setResult(res);
+      res === WINNER.PLAYER && incrementScore();
+      res === WINNER.COMPUTER && decrementScore();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [playerChoice, computerChoice]);
