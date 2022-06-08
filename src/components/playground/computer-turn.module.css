@@ -2,6 +2,15 @@
 @value firstShadowRadius: clamp(1em, 1.7vw, 1.5em);
 @value gridRowGap: clamp(1.5em,2.9vw,2.5em);
 
+@keyframes playing {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .container {
   min-height: 50vh;
   display: grid;
@@ -26,6 +35,9 @@
 }
 .item2 {
   grid-area: item2;
+}
+.playing {
+  animation: playing ease-out 500ms infinite;
 }
 .highlight {
   border-radius: 50%;

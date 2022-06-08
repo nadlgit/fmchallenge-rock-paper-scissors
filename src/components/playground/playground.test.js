@@ -8,6 +8,7 @@ import { CHOICES, WINNER } from 'utils/constants';
 jest.mock('logic/game');
 
 describe('Playground component', () => {
+  const waitTimeoutMs = 2000;
   const testProps = { incrementScore: jest.fn(), decrementScore: jest.fn() };
   const testChoices = [
     { str: /rock/i, val: CHOICES.ROCK },
@@ -24,28 +25,32 @@ describe('Playground component', () => {
     expect(screen.queryByRole('button', { name: replayStr })).not.toBeInTheDocument();
   });
 
-  test('play and replay loop', async () => {
-    generateComputerChoice.mockImplementation(() => CHOICES.ROCK);
-    processWinner.mockImplementation(() => WINNER.PLAYER);
-    render(<Playground {...testProps} />);
+  test(
+    'play and replay loop',
+    async () => {
+      generateComputerChoice.mockImplementation(() => CHOICES.ROCK);
+      processWinner.mockImplementation(() => WINNER.PLAYER);
+      render(<Playground {...testProps} />);
 
-    for (let i = 0; i < testChoices.length; i++) {
-      userEvent.click(screen.getByRole('button', { name: testChoices[i].str }));
-      testChoices.forEach((item) => {
-        expect(screen.queryByRole('button', { name: item.str })).not.toBeInTheDocument();
-      });
-      expect(screen.getByText(/you picked/i)).toBeInTheDocument();
-      expect(screen.getByText(/the house picked/i)).toBeInTheDocument();
-      await screen.findByRole('button', { name: replayStr });
-      userEvent.click(screen.getByRole('button', { name: replayStr }));
-      testChoices.forEach((item) => {
-        expect(screen.getByRole('button', { name: item.str })).toBeInTheDocument();
-      });
-      expect(screen.queryByRole('button', { name: replayStr })).not.toBeInTheDocument();
-    }
-    expect(generateComputerChoice).toHaveBeenCalledTimes(testChoices.length);
-    expect(processWinner).toHaveBeenCalledTimes(testChoices.length);
-  });
+      for (let i = 0; i < testChoices.length; i++) {
+        userEvent.click(screen.getByRole('button', { name: testChoices[i].str }));
+        testChoices.forEach((item) => {
+          expect(screen.queryByRole('button', { name: item.str })).not.toBeInTheDocument();
+        });
+        expect(screen.getByText(/you picked/i)).toBeInTheDocument();
+        expect(screen.getByText(/the house picked/i)).toBeInTheDocument();
+        await screen.findByRole('button', { name: replayStr }, { timeout: waitTimeoutMs });
+        userEvent.click(screen.getByRole('button', { name: replayStr }));
+        testChoices.forEach((item) => {
+          expect(screen.getByRole('button', { name: item.str })).toBeInTheDocument();
+        });
+        expect(screen.queryByRole('button', { name: replayStr })).not.toBeInTheDocument();
+      }
+      expect(generateComputerChoice).toHaveBeenCalledTimes(testChoices.length);
+      expect(processWinner).toHaveBeenCalledTimes(testChoices.length);
+    },
+    testChoices.length * waitTimeoutMs
+  );
 
   test.each(testChoices)('display player choice $val', async ({ str }) => {
     generateComputerChoice.mockImplementation(() => '');
@@ -65,8 +70,12 @@ describe('Playground component', () => {
 
     userEvent.click(screen.getByRole('button', { name: playerChoiceStr }));
     await waitFor(() => expect(generateComputerChoice).toHaveBeenCalled());
-    await waitFor(() =>
-      expect(screen.getAllByRole('img', { name: str }).length).toBe(str === playerChoiceStr ? 2 : 1)
+    await waitFor(
+      () =>
+        expect(screen.getAllByRole('img', { name: str }).length).toBe(
+          str === playerChoiceStr ? 2 : 1
+        ),
+      { timeout: waitTimeoutMs }
     );
   });
 
@@ -76,7 +85,7 @@ describe('Playground component', () => {
     render(<Playground {...testProps} />);
 
     userEvent.click(screen.getByRole('button', { name: testChoices[0].str }));
-    await screen.findByText(/you win/i);
+    await screen.findByText(/you win/i, {}, { timeout: waitTimeoutMs });
     expect(testProps.incrementScore).toHaveBeenCalled();
     expect(testProps.decrementScore).not.toHaveBeenCalled();
   });
@@ -87,7 +96,7 @@ describe('Playground component', () => {
     render(<Playground {...testProps} />);
 
     userEvent.click(screen.getByRole('button', { name: testChoices[0].str }));
-    await screen.findByText(/you lose/i);
+    await screen.findByText(/you lose/i, {}, { timeout: waitTimeoutMs });
     expect(testProps.incrementScore).not.toHaveBeenCalled();
     expect(testProps.decrementScore).toHaveBeenCalled();
   });
@@ -98,7 +107,7 @@ describe('Playground component', () => {
     render(<Playground {...testProps} />);
 
     userEvent.click(screen.getByRole('button', { name: testChoices[0].str }));
-    await screen.findByText(/draw/i);
+    await screen.findByText(/draw/i, {}, { timeout: waitTimeoutMs });
     expect(testProps.incrementScore).not.toHaveBeenCalled();
     expect(testProps.decrementScore).not.toHaveBeenCalled();
   });

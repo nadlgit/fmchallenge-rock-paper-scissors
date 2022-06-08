@@ -21,13 +21,11 @@ export const ComputerTurn = ({
       ? 'Draw'
       : '';
 
-  const delayMs = 300;
-
   useEffect(() => {
     computerChoice &&
       setTimeout(() => {
         setShowComputerChoice(true);
-      }, delayMs);
+      }, 1000);
   }, [computerChoice]);
 
   useEffect(() => {
@@ -35,7 +33,7 @@ export const ComputerTurn = ({
       showComputerChoice &&
       setTimeout(() => {
         setShowResult(true);
-      }, delayMs);
+      }, 300);
   }, [result, showComputerChoice]);
 
   return (
@@ -52,7 +50,7 @@ export const ComputerTurn = ({
       <div
         className={`${styles.item2} ${
           showResult && result === WINNER.COMPUTER ? styles.highlight : ''
-        }`}
+        } ${showResult ? '' : styles.playing}`}
       >
         <Item type={showComputerChoice && computerChoice} />
       </div>
